@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import firebase from 'firebase';
-import { Header } from './components/common';
-import { LoginForm } from './components/LoginForm';
+import { Header, Button } from './components/common';
+import LoginForm from './components/LoginForm';
 
 class App extends Component {
 	componentWillMount() {
@@ -13,7 +13,7 @@ class App extends Component {
 		projectId: 'authentication-rnc9',
 		storageBucket: 'authentication-rnc9.appspot.com',
 		messagingSenderId: '320056014461'
-  		});
+  	});
 	}
 
 	render() {
@@ -24,6 +24,7 @@ class App extends Component {
 			</View>
 			);
 	}
+
 }
 
 export default App;
