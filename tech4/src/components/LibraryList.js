@@ -3,9 +3,21 @@ import { connect } from 'react-redux';
 import { View } from 'react-native';
 
 class LibraryList extends Component {
+
+  componentWillMount() {
+    const ds = new ListView.DataSource({
+      rowHasChanged: (r1, r2) => r1 !== r2;
+    });
+
+    this.dataSource = ds.cloneWithRows(this.props.libraries);
+  }
+
   render () {
-    console.log(this.props);
-    return;// <View></View>
+    return (
+      <ListView
+        dataSource={this.dataSource}
+        />
+    );
   }
 }
 
