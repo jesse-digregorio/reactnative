@@ -19,13 +19,14 @@ export const employeeCreate = ({ name, phone, shift }) => {
   // according the the instructor, this is a little "dishonest".
   // according to him, we don't really want or need to return anything form here,
   // but he wrapped it in a function to satisfy 'redux-thunk' requirement.
-  return () => {
+  return (dispatch) => {
     firebase.database().ref(`/users/${currentUser.uid}/employees`)
       .push({ name, phone, shift })
       .then(() => {
         dispatch({ type: EMPLOYEE_CREATE });
         Actions.pop();
-      });
+        }
+      );
   };
 };
 // problem with .then(() => Actions.employeeList());
