@@ -26,6 +26,10 @@ class EmployeeEdit extends Component {
 
       Communications.text(phone, `Your upcoming shift is on ${shift}`);
   }
+  onRemovePress() {
+      const { phone, shift } = this.props
+      
+  }
 
   render() {
     return (
