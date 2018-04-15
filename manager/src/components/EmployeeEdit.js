@@ -44,6 +44,12 @@ class EmployeeEdit extends Component {
           </Button>
         </CardSection>
 
+        <CardSection>
+          <Button onPress={this.onRemovePress.bind(this)}>
+            Remove Employee
+          </Button>
+        </CardSection>
+
       </Card>
     );
   }
